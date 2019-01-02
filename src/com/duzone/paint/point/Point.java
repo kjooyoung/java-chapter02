@@ -1,11 +1,13 @@
-package paint;
+package com.duzone.paint.point;
 
-public class Point {
+import com.duzone.paint.i.Drawable;
+
+public class Point implements Drawable {
 	private int x;
 	private int y;
 
 	public Point() {
-
+		System.out.println("Point() called");
 	}
 
 	public Point(int x, int y) {
@@ -37,9 +39,14 @@ public class Point {
 	// 하나의 메세지로 두가지 기능을 한다
 	public void show(boolean visible) {
 		if (visible) {
-			show();//중복성을 피한다
+			show();// 중복성을 피한다
 		} else {
 			System.out.println("점[x=" + x + ", y=" + y + "]을 지웠습니다.");
 		}
+	}
+	// interface Drawable을 이용한 draw() 구현
+	@Override
+	public void draw() {
+		show();
 	}
 }
