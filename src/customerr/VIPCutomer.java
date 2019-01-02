@@ -1,4 +1,4 @@
-package customer;
+package customerr;
 
 import chapter02.Customer;
 
